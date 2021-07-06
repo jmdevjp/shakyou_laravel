@@ -21,10 +21,13 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/register', [App\Http\Controllers\RegisterController::class, 'create'])
+use App\Http\Controllers\RegisterController;
+
+Route::get('/register', [RegisterController::class, 'create'])
     ->middleware('guest')
     ->name('register');
-Route::post('/register', [App\Http\Controllers\RegisterController::class, 'store'])
+Route::post('/register', [RegisterController::class, 'store'])
+    ->middleware('guest');
 
 use App\Http\Controllers\LoginController;
 
