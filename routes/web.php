@@ -25,4 +25,14 @@ Route::get('/register', [App\Http\Controllers\RegisterController::class, 'create
     ->middleware('guest')
     ->name('register');
 Route::post('/register', [App\Http\Controllers\RegisterController::class, 'store'])
+
+use App\Http\Controllers\LoginController;
+
+Route::get('/login', [LoginController::class, 'index'])
+    ->middleware('guest')
+    ->name('login');
+Route::post('/login', [LoginController::class, 'authenticate'])
     ->middleware('guest');
+Route::get('/logout', [LoginController::class, 'logout'])
+    ->middleware('auth')
+    ->name('logout');
