@@ -39,3 +39,17 @@ Route::post('/login', [LoginController::class, 'authenticate'])
 Route::get('/logout', [LoginController::class, 'logout'])
     ->middleware('auth')
     ->name('logout');
+
+use App\Http\Controllers\TextAction;
+use App\Http\Controllers\ViewAction;
+use App\Http\Controllers\JsonAction;
+use App\Http\Controllers\DownloadAction;
+use App\Http\Controllers\RedirectAction;
+use App\Http\Controllers\StreamAction;
+
+Route::get('/text', TextAction::class);
+Route::get('/view', ViewAction::class);
+Route::get('/json', JsonAction::class);
+Route::get('/dl', DownloadAction::class);
+Route::get('/redirect', RedirectAction::class);
+Route::get('/stream', StreamAction::class);
