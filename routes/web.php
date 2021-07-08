@@ -53,3 +53,7 @@ Route::get('/json', JsonAction::class);
 Route::get('/dl', DownloadAction::class);
 Route::get('/redirect', RedirectAction::class);
 Route::get('/stream', StreamAction::class);
+
+use App\Http\Controllers\ArticlePayloadAction;
+
+Route::get('/payload', ArticlePayloadAction::class);
