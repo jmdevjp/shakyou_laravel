@@ -37,4 +37,9 @@ class Author extends Model
     // ];
 
     use SoftDeletes;
+
+    public function books()
+    {
+        return $this->hasMany('\App\Models\Book');
+    }
 }
