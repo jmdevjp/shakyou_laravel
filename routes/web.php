@@ -57,3 +57,15 @@ Route::get('/stream', StreamAction::class);
 use App\Http\Controllers\ArticlePayloadAction;
 
 Route::get('/payload', ArticlePayloadAction::class);
+
+use Artisan;
+
+Route::get('/no_args', function() {
+    Artisan::call('hello:class hoge');
+});
+
+use Illuminate\Contracts\Console\Kernel;
+
+Route::get('/no_args_di', function (Kernel $artisan) {
+    $artisan->call('hello:class fuga --switch');
+});
