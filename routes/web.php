@@ -58,7 +58,7 @@ use App\Http\Controllers\ArticlePayloadAction;
 
 Route::get('/payload', ArticlePayloadAction::class);
 
-use Artisan;
+use Illuminate\Support\Facades\Artisan;
 
 Route::get('/no_args', function() {
     Artisan::call('hello:class hoge');
