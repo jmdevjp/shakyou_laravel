@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $view = view('welcome');
+    Event::dispatch(new App\Event\PublishProcessor(1));
+    return $view;
 });
 
 Route::get('/home', function () {

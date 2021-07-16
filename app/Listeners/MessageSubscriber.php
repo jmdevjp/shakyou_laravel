@@ -26,6 +26,6 @@ class MessageSubscriber
      */
     public function handle(PublishProcessor $event)
     {
-        //
+        var_dump($event->getInt());
     }
 }

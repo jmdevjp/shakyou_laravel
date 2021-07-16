@@ -14,16 +14,23 @@ class PublishProcessor
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    private $int;
+
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(int $int)
     {
-        //
+        $this->int = $int;
     }
 
+    public function getInt()
+    {
+        return $this->int;
+    }
+    
     /**
      * Get the channels the event should broadcast on.
      *
