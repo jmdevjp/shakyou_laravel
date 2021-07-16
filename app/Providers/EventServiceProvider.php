@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Event\PublishProcessor;
+use App\Events\PublishProcessor;
 use App\Listeners\MessageSubscriber;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;

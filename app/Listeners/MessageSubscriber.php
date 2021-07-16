@@ -2,7 +2,7 @@
 
 namespace App\Listeners;
 
-use App\Event\PublishProcessor;
+use App\Events\PublishProcessor;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
