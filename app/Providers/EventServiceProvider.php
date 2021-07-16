@@ -18,6 +18,9 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             'App\Listeners\RegisteredListener',
         ],
+        \App\Event\PublishProcessor::class => [
+            \App\Listeners\MessageSubscriber::class,
+        ],
     ];
 
     /**
