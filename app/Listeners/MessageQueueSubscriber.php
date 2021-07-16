@@ -6,7 +6,7 @@ use App\Events\PublishProcessor;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class MessageSubscriber
+class MessageQueueSubscriber implements ShouldQueue
 {
     /**
      * Create the event listener.
@@ -26,6 +26,6 @@ class MessageSubscriber
      */
     public function handle(PublishProcessor $event)
     {
-        var_dump('MessageSubscriber ' . $event->getInt());
+        \Log::Info('MessageQueueSubscriber ' . $event->getInt());
     }
 }
